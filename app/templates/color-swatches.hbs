@@ -1,0 +1,22 @@
+<h2>color-swatches</h2>
+<p>Example of a default color-panel component</p>
+
+{{color-panel}}
+
+
+<h3>Display swatches for all colors in our model</h3>
+
+<div class="row">
+{{#each color in model}}
+    <div class="col-sm-2 col-md-2">
+      {{color-panel color=color}}
+    </div>
+{{/each}}
+</div>
+
+
+
+
+
+
+
