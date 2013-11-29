@@ -1,0 +1,53 @@
+<h2>the-box</h2>
+<p>This is an example templateless component. See the code in <code>app/components/the-box.js</code></p>
+<p>This component works by observing the values defined within the component and using the style attribute to modify the component's dimensions and color.</p>
+<h3>The box component with default values</h3>
+
+
+
+{{the-box}}
+
+
+
+<h3>The box component with static values</h3>
+
+
+
+{{the-box bcolor="blue" bw=50 bh=50}}
+
+
+
+<h3> The box with dynamic controls for width and height</h3>
+<p>The form controls are a component composed of only a handlebars template file. 
+    <code>app/templates/components/form-controls.hbs</code></p>
+<p>The values for width and height are bound to the show-the-box controller. And in turn bound to instances of the component <code>app/components/the-box.js</code>. Type in numbers to change box size. </p>
+
+
+
+{{form-controls w=width h=height}}
+
+
+
+<h4>Get colors from the controller and create a box component instance for each item in array.</h4>
+
+
+<div class="row">
+{{#each color in model}}
+    <div class="col-sm-3 col-md-2">
+        <div class="thumbnail">
+
+
+          {{the-box bcolor=color bw=width bh=height}}
+
+
+          <div class="caption">
+            {{color}}
+          </div>
+        </div>
+    </div>
+{{/each}}
+</div>
+
+
+
+
